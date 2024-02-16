@@ -8,8 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FirebaseAdmin" Version="2.4.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ThriftStore.Application\ThriftStore.Application.csproj" />
   </ItemGroup>
 
 </Project>
