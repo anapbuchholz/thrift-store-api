@@ -7,7 +7,7 @@ namespace ThriftStore.Infrastructure
 {
     public static class DependencyInjection
     {
-        public static void AddInfrastructure(this IServiceCollection services)
+        public static void AddDependencies(this IServiceCollection services)
         {
             services.AddScoped<IAuthenticationService, AuthenticationService>();
 

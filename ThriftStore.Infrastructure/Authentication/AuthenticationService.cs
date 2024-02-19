@@ -1,11 +1,20 @@
-﻿
+﻿using FirebaseAdmin.Auth;
+
 namespace ThriftStore.Infrastructure.Authentication
 {
     internal sealed class AuthenticationService : IAuthenticationService
     {
-        public Task<string> RegisterUserAsync(string email, string password)
+        public async Task<string> RegisterUserAsync(string email, string password)
         {
-            throw new NotImplementedException();
+            var userArgs = new UserRecordArgs
+            { 
+                Email = email, 
+                Password = password 
+            };
+
+            var userRecord = await FirebaseAuth.DefaultInstance.CreateUserAsync(userArgs);
+
+            return userRecord.Uid;
         }
     }
 }
