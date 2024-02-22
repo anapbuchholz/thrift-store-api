@@ -5,16 +5,11 @@ VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThriftStore.Api", "ThriftStore.Api\ThriftStore.Api.csproj", "{B542627A-E230-40CF-8E12-2C12E23974E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThriftStore.Infrastructure", "ThriftStore.Infrastructure\ThriftStore.Infrastructure.csproj", "{D25DF1BD-AA7E-4345-8C15-0449D23DFE16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThriftStore.Infrastructure", "ThriftStore.Infrastructure\ThriftStore.Infrastructure.csproj", "{D25DF1BD-AA7E-4345-8C15-0449D23DFE16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThriftStore.Application", "ThriftStore.Application\ThriftStore.Application.csproj", "{E4986C33-0755-4774-A670-A925073FBD0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThriftStore.Application", "ThriftStore.Application\ThriftStore.Application.csproj", "{E4986C33-0755-4774-A670-A925073FBD0B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{883C804D-DC1F-4200-9965-79C62306F6BD}"
-	ProjectSection(SolutionItems) = preProject
-		firebase.json = firebase.json
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThriftStore.IoC", "ThriftStore.IoC\ThriftStore.IoC.csproj", "{FC11F2C7-074D-472B-88E5-EE24FEDA7F37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThriftStore.IoC", "ThriftStore.IoC\ThriftStore.IoC.csproj", "{FC11F2C7-074D-472B-88E5-EE24FEDA7F37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

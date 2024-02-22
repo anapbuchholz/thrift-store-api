@@ -1,6 +1,6 @@
 ﻿namespace ThriftStore.Infrastructure.Authentication
 {
-    internal interface IAuthenticationService
+    public interface IAuthenticationRepository
     {
         Task<string> RegisterUserAsync(string email, string password);
     }

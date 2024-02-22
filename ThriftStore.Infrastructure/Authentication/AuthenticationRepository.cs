@@ -2,7 +2,7 @@
 
 namespace ThriftStore.Infrastructure.Authentication
 {
-    internal sealed class AuthenticationService : IAuthenticationService
+    internal sealed class AuthenticationRepository : IAuthenticationRepository
     {
         public async Task<string> RegisterUserAsync(string email, string password)
         {

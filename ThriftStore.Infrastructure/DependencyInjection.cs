@@ -9,7 +9,7 @@ namespace ThriftStore.Infrastructure
     {
         public static void AddDependencies(this IServiceCollection services)
         {
-            services.AddScoped<IAuthenticationService, AuthenticationService>();
+            services.AddScoped<IAuthenticationRepository, AuthenticationRepository>();
 
             FirebaseApp.Create(new AppOptions
             {
