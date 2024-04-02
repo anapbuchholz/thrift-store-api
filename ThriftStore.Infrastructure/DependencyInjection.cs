@@ -10,11 +10,6 @@ namespace ThriftStore.Infrastructure
         public static void AddDependencies(this IServiceCollection services)
         {
             services.AddScoped<IAuthenticationRepository, AuthenticationRepository>();
-
-            FirebaseApp.Create(new AppOptions
-            {
-                Credential = GoogleCredential.FromFile("firebase.json")
-            });
         }
     }
 }

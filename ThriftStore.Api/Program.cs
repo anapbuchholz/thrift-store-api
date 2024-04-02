@@ -1,4 +1,9 @@
+using FirebaseAdmin;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authentication;
+using ThriftStore.Api.Authentication;
 using ThriftStore.IoC;
+using Google.Apis.Auth.OAuth2;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +16,12 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddInfrastructure();
 builder.Services.AddApplication();
+
+builder.Services.AddSingleton(FirebaseApp.Create(new AppOptions
+{
+    Credential = GoogleCredential.FromFile("firebase.json")
+}));
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddScheme<AuthenticationSchemeOptions, CustomAuthenticationHandler>(JwtBearerDefaults.AuthenticationScheme, (o) => { });
 
 var app = builder.Build();
 

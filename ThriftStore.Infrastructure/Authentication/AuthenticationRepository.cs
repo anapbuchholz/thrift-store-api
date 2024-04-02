@@ -1,4 +1,5 @@
-﻿using FirebaseAdmin.Auth;
+﻿using Firebase.Auth;
+using FirebaseAdmin.Auth;
 
 namespace ThriftStore.Infrastructure.Authentication
 {
@@ -12,9 +13,18 @@ namespace ThriftStore.Infrastructure.Authentication
                 Password = password 
             };
 
-            var userRecord = await FirebaseAuth.DefaultInstance.CreateUserAsync(userArgs);
+            var userRecord = await FirebaseAdmin.Auth.FirebaseAuth.DefaultInstance.CreateUserAsync(userArgs);
 
             return userRecord.Uid;
+        }
+
+        public async Task<string> AuthorizeUser(string userEmail, string userPassword)
+        {
+
+            var authProvider = new FirebaseAuthProvider(new FirebaseConfig("AIzaSyCZqYUkA54PvuVY0wiYdd43OOUGAQUhdIA"));
+            var result = await authProvider.SignInWithEmailAndPasswordAsync(userEmail, userPassword);
+
+            return result.FirebaseToken;
         }
     }
 }

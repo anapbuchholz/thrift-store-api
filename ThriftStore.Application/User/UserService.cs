@@ -15,5 +15,10 @@ namespace ThriftStore.Application.User
         {
             await _authenticationRepository.RegisterUserAsync(user.Email, user.Password);
         }
+
+        public async Task<string> AuthorizeUser(string userEmail, string userPassword)
+        {
+            return await _authenticationRepository.AuthorizeUser(userEmail, userPassword);
+        }
     }
 }
