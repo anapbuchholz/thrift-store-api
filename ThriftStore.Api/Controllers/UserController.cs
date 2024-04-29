@@ -5,18 +5,17 @@ using ThriftStore.Application.User;
 namespace ThriftStore.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-
-    public class WeatherForecastController : ControllerBase
+    public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
 
-        public WeatherForecastController(IUserService userService)
+        public UserController(IUserService userService)
         {
             _userService = userService;
         }
 
-        [HttpPost(Name = "GetWeatherForecast")]
+        [HttpPost()]
+        [Route("/user")]
         public async Task<IActionResult> Post(UserDto user)
         {
             await _userService.RegisterUser(user);
@@ -24,15 +23,8 @@ namespace ThriftStore.Api.Controllers
             return Ok();
         }
 
-        [Authorize]
-        [HttpGet("/oi")]
-        public async Task<IActionResult> Get()
-        {
-
-            return Ok();
-        }
-
-        [HttpGet("/login")]
+        [HttpGet]
+        [Route("/user/auth-token")]
         public async Task<IActionResult> GetAuth(string userEmail, string password)
         {
             var result = await _userService.AuthorizeUser(userEmail, password);
